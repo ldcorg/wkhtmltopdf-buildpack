@@ -9,7 +9,7 @@ function puts() {
 }
 
 indent() {
-  sed -u 's/^/       /'
+  sed -u "s/^/       /"
 }
 
 # Set the correct URL for the package to download.
@@ -31,23 +31,23 @@ if [ ! -f "$APP_BIN/wkhtmltopdf" ]; then
 
   # Download the package and install it.
   if [ ! -d "$PACKAGE_EXTRACT_PATH" ]; then
-    puts 'Downloading wkhtmltopdf'
+    puts "Downloading wkhtmltopdf"
     echo $PACKAGE_URL | indent
     mkdir -p $(dirname $PACKAGE_NAME)
     wget --quiet --continue --output-document="$PACKAGE_NAME" "$PACKAGE_URL"
 
-    puts 'Extracting wkhtmltopdf'
-    puts 'Moving wkhtmltopdf binaries to $APP_BIN'
+    puts "Extracting wkhtmltopdf"
+    puts "Moving wkhtmltopdf binaries to $APP_BIN"
 
     if [[ $(basename $PACKAGE_URL) == *deb ]]; then
       dpkg -x "$PACKAGE_NAME" "$PACKAGE_EXTRACT_PATH"
       cp $PACKAGE_EXTRACT_PATH/usr/local/bin/* $APP_BIN
     fi
 
-    puts 'Deleting temporary data'
+    puts "Deleting temporary data"
     rm "$PACKAGE_NAME"
     rm -rf "$PACKAGE_EXTRACT_PATH"
 
-    puts 'Successfully installed wkhtmltopdf'
+    puts "Successfully installed wkhtmltopdf"
   fi
 fi

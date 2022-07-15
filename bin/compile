@@ -37,7 +37,7 @@ if [ ! -f "$APP_BIN/wkhtmltopdf" ]; then
     wget --quiet --continue --output-document="$PACKAGE_NAME" "$PACKAGE_URL"
 
     puts "Extracting wkhtmltopdf"
-    puts "Moving wkhtmltopdf binaries to $APP_BIN"
+    puts "Moving wkhtmltopdf binaries to /app/bin"
 
     if [[ $(basename $PACKAGE_URL) == *deb ]]; then
       dpkg -x "$PACKAGE_NAME" "$PACKAGE_EXTRACT_PATH"

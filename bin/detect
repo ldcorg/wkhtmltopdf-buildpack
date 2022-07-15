@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [ "$STACK" = "heroku-20" ] || [ "$STACK" = "heroku-22" ]; then
+  echo "wkhtmltopdf"
+  exit 0
+else
+  echo "ERROR: wkhtmltopdf not supported on stack $STACK"
+  exit 1
+fi

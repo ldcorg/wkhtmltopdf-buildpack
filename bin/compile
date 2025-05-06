@@ -17,6 +17,9 @@ if [ "$STACK" = "heroku-20" ]; then
   PACKAGE_URL="https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb"
 elif [ "$STACK" = "heroku-22" ]; then
   PACKAGE_URL="https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb"
+elif [ "$STACK" = "heroku-24" ]; then
+  # Same as "heroku-22" for now.
+  PACKAGE_URL="https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb"
 fi
 puts "Setting package for $STACK"
 

@@ -7,6 +7,6 @@ installs [wkhtmltopdf](https://wkhtmltopdf.org/index.html).
 
 - `heroku-20`
 - `heroku-22`
+- `heroku-24`
 
-
-wkhtmltopdf version: `0.12.6` 
+wkhtmltopdf versions: `0.12.6-1` and `0.12.6.1-2`
